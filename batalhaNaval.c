@@ -4,9 +4,7 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
 // Siga os comentários para implementar cada parte do desafio.
 
-int main() {
-    // //Nível aventureiro Matheus Cavalcanti 
-    #include <stdio.h>
+//Nível aventureiro Matheus Cavalcanti 
 
 int main() {
     int tabuleiro[10][10];
@@ -47,9 +45,6 @@ int main() {
         }
         printf("\n");
     }
-
-    return 0;
-}
 
     return 0;
 }
