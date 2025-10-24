@@ -1,50 +1,41 @@
-#include <stdio.h>
-
-// Desafio Batalha Naval - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
-// Siga os comentários para implementar cada parte do desafio.
-
-//Nível aventureiro Matheus Cavalcanti 
-
 int main() {
-    int tabuleiro[10][10];
+    int tabuleiro[10][10];   // tabuleiro 10x10
     int i, j;
+    int navio = 3;           // valor que representa o navio
+    int agua = 0;            // valor que representa a água
+    int tamanho_navio = 3;   // cada navio ocupa 3 posições
 
-    // Inicializa o tabuleiro com 0 (água)
+    // 1. Inicializa o tabuleiro com água (0)
     for (i = 0; i < 10; i++) {
         for (j = 0; j < 10; j++) {
-            tabuleiro[i][j] = 0;
+            tabuleiro[i][j] = agua;
         }
     }
 
-    // Posiciona navio horizontal (linha 2, colunas 1 a 3)
-    tabuleiro[2][1] = 3;
-    tabuleiro[2][2] = 3;
-    tabuleiro[2][3] = 3;
+    // 2. Coordenadas iniciais (definidas no código)
+    int linhaH = 2, colunaH = 4; // navio horizontal
+    int linhaV = 5, colunaV = 7; // navio vertical
 
-    // Posiciona navio vertical (coluna 5, linhas 4 a 6)
-    tabuleiro[4][5] = 3;
-    tabuleiro[5][5] = 3;
-    tabuleiro[6][5] = 3;
+    // 3. Posiciona o navio horizontal
+    for (i = 0; i < tamanho_navio; i++) {
+        tabuleiro[linhaH][colunaH + i] = navio;
+    }
 
-    // Posiciona navio diagonal principal (posição em escada: [0][0], [1][1], [2][2])
-    tabuleiro[0][0] = 3;
-    tabuleiro[1][1] = 3;
-    tabuleiro[2][2] = 3;
+    // 4. Posiciona o navio vertical
+    for (i = 0; i < tamanho_navio; i++) {
+        tabuleiro[linhaV + i][colunaV] = navio;
+    }
 
-    // Posiciona navio diagonal secundária (posição em escada: [0][9], [1][8], [2][7])
-    tabuleiro[0][9] = 3;
-    tabuleiro[1][8] = 3;
-    tabuleiro[2][7] = 3;
-
-    // Exibe o tabuleiro
-    printf("Tabuleiro 10x10 com 4 navios:\n");
+    // 5. Exibe o tabuleiro
+    printf("\n=== TABULEIRO BATALHA NAVAL ===\n\n");
     for (i = 0; i < 10; i++) {
         for (j = 0; j < 10; j++) {
             printf("%d ", tabuleiro[i][j]);
         }
         printf("\n");
     }
+
+    printf("\nLegenda: 0 = água | 3 = navio\n");
 
     return 0;
 }
